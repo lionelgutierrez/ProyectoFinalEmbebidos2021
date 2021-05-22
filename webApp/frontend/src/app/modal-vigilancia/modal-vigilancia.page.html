@@ -1,0 +1,22 @@
+
+      <ion-card>
+         <div>
+          <h3 *ngIf="pagina == 'electrovalvula'" >Ingreso de nuevo estado de electrovalvula</h3>
+          <h3 *ngIf="pagina == 'sensor'" >Ingreso de nuevos datos sensados</h3>
+        </div>
+        
+        <ion-card-content>
+          <div>
+              <p>
+               {{mensaje}}
+              </p>
+          </div>
+          <div>
+            <p>
+               {{mensaje2}}
+            </p>
+        </div>
+
+        </ion-card-content>
+      </ion-card>
+

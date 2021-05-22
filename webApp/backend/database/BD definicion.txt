@@ -1,0 +1,47 @@
+
+1- Base de datoa 
+
+CREATE DATABASE "ProyectoEmbebidos"
+    WITH 
+    OWNER = lionel
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+2 - Tablas
+
+2.1 tabla para guardar datos de humedad y temperatura recibidos 
+
+        -- Table: public.SENSORES_DATOS
+
+        -- DROP TABLE public."SENSORES_DATOS";
+
+        CREATE TABLE public."SENSORES_DATOS"
+        (
+            "TEMPERATURA" integer NOT NULL,
+            "HUMEDAD" integer NOT NULL,
+            "FECHA" timestamp without time zone NOT NULL,
+            CONSTRAINT pk_sensores PRIMARY KEY ("FECHA")
+        )
+
+        TABLESPACE pg_default;
+
+        ALTER TABLE public."SENSORES_DATOS"
+            OWNER to lionel;
+
+2.2 Tabla para guardar datos de eventos de estado de electrovalvula
+
+        -- Table: public.electrovalvula_datos
+
+        -- DROP TABLE public.electrovalvula_datos;
+
+        CREATE TABLE public.electrovalvula_datos
+        (
+            "ESTADO" character varying(3) COLLATE pg_catalog."default" NOT NULL,
+            "FECHA" timestamp without time zone NOT NULL,
+            CONSTRAINT "PK_ELETRVAL_VALOR" PRIMARY KEY ("FECHA")
+        )
+
+        TABLESPACE pg_default;
+
+        ALTER TABLE public.electrovalvula_datos
+            OWNER to lionel;
